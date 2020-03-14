@@ -1,0 +1,19 @@
+TIME=$(date +"%H")
+TIMESTRING="day"
+if [ $TIME -gt 22 ]; then
+	TIMESTRING="night"
+elif [ $TIME -gt 18 ]; then
+	TIMESTRING="evening"
+elif [ $TIME -gt 15 ]; then
+	TIMESTRING="day"
+elif [ $TIME -gt 12 ]; then
+	TIMESTRING="afternoon"
+elif [ $TIME -gt 04 ]; then
+	TIMESTRING="morning"
+else
+	TIME="time"
+fi
+echo $TIMESTRING $USER
+echo your battery: && ~/Scripts/status/battery
+echo date and time: && date +"%d/%m/%Y %T"
+
